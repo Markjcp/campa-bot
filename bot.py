@@ -1,6 +1,7 @@
 import logging
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 import os
+from .core import today_command
 PORT = int(os.environ.get('PORT', 5000))
 
 # Enable logging
@@ -29,7 +30,8 @@ def error(update, context):
     logger.warning('Update "%s" caused error "%s"', update, context.error)
 
 def today(update, context):
-    update.message.reply_text('Juega o no juega?!')
+    result = today_command
+    update.message.reply_text(result)
 
 def main():
     """Start the bot."""
