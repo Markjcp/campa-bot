@@ -30,7 +30,7 @@ def error(update, context):
     logger.warning('Update "%s" caused error "%s"', update, context.error)
 
 def today(update, context):
-    result = core.today_command
+    result = core.today_command()
     update.message.reply_text(result)
 
 def main():
