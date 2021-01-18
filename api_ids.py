@@ -1,0 +1,5 @@
+team_id = '8'
+date_prefix = 'T00:00:00.000Z'
+default_season = '2020'
+page = '0'
+per_page = '30'
