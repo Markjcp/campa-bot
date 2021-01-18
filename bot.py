@@ -1,7 +1,7 @@
 import logging
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 import os
-import core
+import commands
 PORT = int(os.environ.get('PORT', 5000))
 
 # Enable logging
@@ -30,7 +30,7 @@ def error(update, context):
     logger.warning('Update "%s" caused error "%s"', update, context.error)
 
 def today(update, context):
-    result = core.today_command()
+    result = commands.today_command()
     update.message.reply_text(result)
 
 def main():
