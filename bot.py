@@ -34,6 +34,10 @@ def about(update, context):
     result = commands.about_command()
     update.message.reply_text(result)
 
+def feedback(update, context):
+    result = commands.feedback_command()
+    update.message.reply_text(result)
+
 # def echo(update, context):
 #     """Echo the user message."""
 #     update.message.reply_text(update.message.text)
@@ -62,6 +66,7 @@ def main():
     dp.add_handler(CommandHandler("stats", stats))
     dp.add_handler(CommandHandler("season", season))
     dp.add_handler(CommandHandler("about", about))
+    dp.add_handler(CommandHandler("feedback", feedback))
     dp.add_handler(CommandHandler("help", help))
 
     # on noncommand i.e message - echo the message on Telegram

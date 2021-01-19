@@ -7,6 +7,7 @@ START_MSG = 'Hi. I am CampaBot(BETA Version). I will keep you updated about Facu
 HELP_MSG = 'Commands available: \n/today - checks if today Denver is playing \n/stats - gives the stats for Campazzo in a given day\n/season - all Facu games in the season\n/about - about this bot'
 ABOUT_MSG = 'This bot is in BETA Version. No optimizations are being made. All the data is from https://rapidapi.com/theapiguy/api/free-nba (unofficial).'
 NO_GAME_MSG = 'No luck, Culeao!!'
+FEEDBACK_MSG = 'Give us feedback in our public channel: https://t.me/CampaBotFeedback'
 RESPONSE_ERROR = 'Something went wrong. We dropped the ball.'
 GAME_FOUND_PREFIX = """YES!! Let's make a Fernet and cheer for Facu. """
 
@@ -26,6 +27,9 @@ def season_command():
 
 def about_command():
     return ABOUT_MSG
+
+def feedback_command():
+    return FEEDBACK_MSG
 
 def today_command(now=clock.now()):
     response = requests.get(
