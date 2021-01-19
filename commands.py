@@ -4,7 +4,7 @@ import json
 import api_ids as ids
 
 START_MSG = 'Hi. I am CampaBot(BETA Version). I will keep you updated about Facundo Campazzo NBA games. Please go to /help to find what can I do for you.'
-HELP_MSG = 'Commands availables: \n/today - checks if today Denver is playing \n/stats - gives the stats for Campazzo in a given day\n /season - all Facu games in the season\n/about - about this bot'
+HELP_MSG = 'Commands available: \n/today - checks if today Denver is playing \n/stats - gives the stats for Campazzo in a given day\n/season - all Facu games in the season\n/about - about this bot'
 ABOUT_MSG = 'This bot is in BETA Version. No optimizations are being made. All the data is from https://rapidapi.com/theapiguy/api/free-nba (unofficial).'
 NO_GAME_MSG = 'No luck, Culeao!!'
 RESPONSE_ERROR = 'Something went wrong. We dropped the ball.'
