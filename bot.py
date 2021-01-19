@@ -15,16 +15,28 @@ TOKEN = '1537976854:AAHk1RLf3Gv5VHtTCPOx4XDJah193r-_vHw'
 # Define a few command handlers. These usually take the two arguments update and
 # context. Error handlers also receive the raised TelegramError object in error.
 def start(update, context):
-    """Send a message when the command /start is issued."""
-    update.message.reply_text('Hi!')
+    result = commands.start_command()
+    update.message.reply_text(result)
 
 def help(update, context):
-    """Send a message when the command /help is issued."""
-    update.message.reply_text('Help!')
+    result = commands.help_command()
+    update.message.reply_text(result)
 
-def echo(update, context):
-    """Echo the user message."""
-    update.message.reply_text(update.message.text)
+def stats(update, context):
+    result = commands.stats_command()
+    update.message.reply_text(result)
+
+def season(update, context):
+    result = commands.season_command()
+    update.message.reply_text(result)
+
+def about(update, context):
+    result = commands.about_command()
+    update.message.reply_text(result)
+
+# def echo(update, context):
+#     """Echo the user message."""
+#     update.message.reply_text(update.message.text)
 
 def error(update, context):
     """Log Errors caused by Updates."""
@@ -47,6 +59,9 @@ def main():
     # on different commands - answer in Telegram
     dp.add_handler(CommandHandler("start", start))
     dp.add_handler(CommandHandler("today", today))
+    dp.add_handler(CommandHandler("stats", stats))
+    dp.add_handler(CommandHandler("season", season))
+    dp.add_handler(CommandHandler("about", about))
     dp.add_handler(CommandHandler("help", help))
 
     # on noncommand i.e message - echo the message on Telegram
