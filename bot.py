@@ -25,9 +25,9 @@ def help(update, context):
 def stats(update, context):
     args = context.args
     arg = ''
-    if len(a) != 0:
+    if len(args) != 0:
         arg = args[0]
-    result = commands.stats_command(args)
+    result = commands.stats_command(arg)
     update.message.reply_text(result)
 
 def season(update, context):
