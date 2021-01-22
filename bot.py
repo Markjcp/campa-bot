@@ -63,7 +63,7 @@ def main():
     # on different commands - answer in Telegram
     dp.add_handler(CommandHandler("start", start))
     dp.add_handler(CommandHandler("today", today))
-    dp.add_handler(CommandHandler("stats", stats))
+    dp.add_handler(CommandHandler("stats", stats, pass_args=True))
     dp.add_handler(CommandHandler("season", season))
     dp.add_handler(CommandHandler("about", about))
     dp.add_handler(CommandHandler("feedback", feedback))
