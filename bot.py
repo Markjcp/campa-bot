@@ -23,7 +23,7 @@ def help(update, context):
     update.message.reply_text(result)
 
 def stats(update, context):
-    result = commands.stats_command(update.message.text)
+    result = commands.stats_command(context.args)
     update.message.reply_text(result)
 
 def season(update, context):

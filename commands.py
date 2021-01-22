@@ -5,7 +5,7 @@ import teams
 import api_ids as ids
 
 START_MSG = 'Hi. I am CampaBot(BETA Version). I will keep you updated about Facundo Campazzo NBA games. Please go to /help to find what can I do for you.'
-HELP_MSG = 'Commands available: \n/today - checks if today Denver is playing \n/stats/[YYYY-MM-DD] - gives the stats for Campazzo in a given day[YYYY-MM-DD]\n/season - all Facu games in the season\n/about - about this bot\n/feedback - tell us what you think'
+HELP_MSG = 'Commands available: \n/today - checks if today Denver is playing \n/stats 2021-01-03 - gives the stats for Campazzo in a given day[YYYY-MM-DD]\n/season - all Facu games in the season\n/about - about this bot\n/feedback - tell us what you think'
 ABOUT_MSG = 'This bot is in BETA Version. No optimizations are being made. All the data is from https://rapidapi.com/theapiguy/api/free-nba (unofficial).'
 NO_GAME_MSG = 'No luck, Culeao. We could not find a game.'
 FEEDBACK_MSG = 'Give us feedback in our public channel: https://t.me/CampaBotFeedback'
