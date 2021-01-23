@@ -2,6 +2,7 @@ import requests
 import clock
 import json
 import teams
+import game_cache
 import api_ids as ids
 
 START_MSG = 'Hi. I am CampaBot(BETA Version). I will keep you updated about Facundo Campazzo NBA games. Please go to /help to find what can I do for you.'
@@ -68,9 +69,12 @@ def stats_command(input_date):
         return INVALID_DATE_MSG
 
     date = clock.transform_date_time_format(input_date)
-    
+
     if clock.after(date,clock.now()):
         return DATE_IN_THE_FUTURE
+    
+    if game_cache.is_game_cached(date):
+        return game_cache.get_cached_game(date)
 
     response = requests.get(
         'https://free-nba.p.rapidapi.com/stats', 

@@ -52,6 +52,11 @@ class CommandSuite(unittest.TestCase):
         result = commands.stats_command('20210103')
         self.assertEqual('2021-01-03 | Denver Nuggets: 124 - Minnesota Timberwolves: 109\n\nMinutes: 21:24\nPoints: 15 \nRebounds: 1\nAssists: 2\nSteals: 3\nBlocks: 1\nTurnovers: 1\nField Goal: 5/8\n3-Point Field Goal: 5/7\nFree throw: 0/0',result)
 
+    def test_stats_game_day_cached(self):
+        result = commands.stats_command('20201229')
+        self.assertEqual('2020-12-29 | Denver Nuggets: 115 - Sacramento Kings: 125\n\nMinutes: 13:34\nPoints: 1 \nRebounds: 2\nAssists: 5\nSteals: 2\nBlocks: 0\nTurnovers: 3\nField Goal: 0/3\n3-Point Field Goal: 0/3\nFree throw: 1/2',result)
+
+
     def test_stats_no_game(self):
         result = commands.stats_command('20201222')
         self.assertEqual(commands.NO_GAME_MSG,result)
