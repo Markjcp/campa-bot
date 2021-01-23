@@ -56,7 +56,7 @@ def season_command():
         result.sort(key=takeFirst)
         command_result = ''
         for res in result:
-            command_result += (res[1] + '\n')
+            command_result += (res[1] + '\n\n')
         return command_result
     else:
         return NO_GAME_MSG

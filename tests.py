@@ -79,7 +79,7 @@ class CommandSuite(unittest.TestCase):
     
     def test_season(self):
         result = commands.season_command()
-        assert result.startswith('2020-12-23\tSacramento Kings: 124 - Denver Nuggets: 122-> /stats_20201223\n2020-12-25\tLA Clippers: 121 - Denver Nuggets: 108-> /stats_20201225\n')
+        assert result.startswith('2020-12-23\tSacramento Kings: 124 - Denver Nuggets: 122-> /stats_20201223\n\n2020-12-25\tLA Clippers: 121 - Denver Nuggets: 108-> /stats_20201225\n\n')
 
 if __name__ == '__main__':
     unittest.main()
