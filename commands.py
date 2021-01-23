@@ -5,7 +5,7 @@ import teams
 import api_ids as ids
 
 START_MSG = 'Hi. I am CampaBot(BETA Version). I will keep you updated about Facundo Campazzo NBA games. Please go to /help to find what can I do for you.'
-HELP_MSG = 'Commands available: \n/today - checks if today Denver is playing \n/stats 2021-01-03 - gives the stats for Campazzo in a given day[YYYY-MM-DD]\n/season - all Facu games in the season\n/about - about this bot\n/feedback - tell us what you think'
+HELP_MSG = 'Commands available: \n/today - checks if today Denver is playing \n/stats - gives the stats for Campazzo in a given day[YYYY-MM-DD]\n/season - all Facu games in the season\n/about - about this bot\n/feedback - tell us what you think'
 ABOUT_MSG = 'This bot is in BETA Version. No optimizations are being made. All the data is from https://rapidapi.com/theapiguy/api/free-nba (unofficial).'
 NO_GAME_MSG = 'No luck, Culeao. I could not find a game.'
 FEEDBACK_MSG = 'Give us feedback in our public channel: https://t.me/CampaBotFeedback'
@@ -13,7 +13,7 @@ RESPONSE_ERROR = 'Something went wrong. I dropped the ball.'
 GAME_FOUND_PREFIX = """YES!! Let's make a Fernet and cheer for Facu. """
 INVALID_DATE_MSG= 'Oh, I am expecting the date in YYYY-MM-DD format. You dropped the ball.'
 DATE_IN_THE_FUTURE='That date is in the future man. Facu is the wizard but I am not.'
-NO_DATE="You didn't give me a date to find. I am expecting it in YYYY-MM-DD format."
+NO_DATE="You didn't give me a date to find. I am expecting it in YYYY-MM-DD format. Write the command and the date with a space or with underscore. For example /stats_2021-01-03"
 
 headers_for_all_req={'x-rapidapi-key': '0fe22cb13emshb468f395b7d2b7fp13c79cjsnb5e281bc6f44', 'x-rapidapi-host': 'free-nba.p.rapidapi.com', 'useQueryString': 'true'}
 
@@ -66,7 +66,7 @@ def stats_command(date):
             fg3m = data[0]['fg3m']
             fta = data[0]['fta']
             ftm = data[0]['ftm']
-            return f'{game_date} - {visitor}: {visitor_team_score} - {home_team}: {home_team_score}\n\nMinutes: {minutes}\nPoints: {points} \nRebounds: {rebound}\nAssists: {assist}\nSteals: {steals}\nBlocks: {blk}\nTurnovers: {turnover}\nField Goal: {fgm}/{fga}\n3-Point Field Goal: {fg3m}/{fg3a}\nFree throw: {ftm}/{fta}'
+            return f'{game_date} | {visitor}: {visitor_team_score} - {home_team}: {home_team_score}\n\nMinutes: {minutes}\nPoints: {points} \nRebounds: {rebound}\nAssists: {assist}\nSteals: {steals}\nBlocks: {blk}\nTurnovers: {turnover}\nField Goal: {fgm}/{fga}\n3-Point Field Goal: {fg3m}/{fg3a}\nFree throw: {ftm}/{fta}'
         except ValueError:
             return RESPONSE_ERROR
     else:

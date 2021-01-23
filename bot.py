@@ -1,6 +1,6 @@
 import logging
 import commands
-from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
+from telegram.ext import Updater, CommandHandler, RegexHandler, MessageHandler, Filters
 import os
 
 PORT = int(os.environ.get('PORT', 5000))
@@ -28,6 +28,11 @@ def stats(update, context):
     if len(args) != 0:
         arg = args[0]
     result = commands.stats_command(arg)
+    update.message.reply_text(result)
+
+def regex_stats(update, context):
+    date = update.message.text.replace('/stats_', '')
+    result = commands.stats_command(date)
     update.message.reply_text(result)
 
 def season(update, context):
@@ -68,6 +73,7 @@ def main():
     dp.add_handler(CommandHandler("start", start))
     dp.add_handler(CommandHandler("today", today))
     dp.add_handler(CommandHandler("stats", stats, pass_args=True))
+    dp.add_handler(RegexHandler('^(/stats_[\d]+)$', regex_stats))
     dp.add_handler(CommandHandler("season", season))
     dp.add_handler(CommandHandler("about", about))
     dp.add_handler(CommandHandler("feedback", feedback))
