@@ -19,3 +19,6 @@ def validate(date_text):
 def transform_date_time_format(date_text):
     input_datetime = datetime.datetime.strptime(date_text, '%Y%m%d')
     return input_datetime.strftime("%Y-%m-%d")
+
+def remove_separators(date_text):
+    return date_text.replace('-','')

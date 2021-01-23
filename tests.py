@@ -71,6 +71,10 @@ class CommandSuite(unittest.TestCase):
     def test_stats_no_date(self):
         result = commands.stats_command('')
         self.assertEqual(commands.NO_DATE,result)
+    
+    def test_season(self):
+        result = commands.season_command()
+        assert result.startswith('2020-12-23 | Sacramento Kings: 124 - Denver Nuggets: 122-> /stats_20201223\n2020-12-25 | LA Clippers: 121 - Denver Nuggets: 108-> /stats_20201225\n')
 
 if __name__ == '__main__':
     unittest.main()
