@@ -49,19 +49,23 @@ class CommandSuite(unittest.TestCase):
         self.assertEqual(commands.NO_GAME_MSG,result)
 
     def test_stats_game_day(self):
-        result = commands.stats_command('2021-01-03')
+        result = commands.stats_command('20210103')
         self.assertEqual('2021-01-03 | Denver Nuggets: 124 - Minnesota Timberwolves: 109\n\nMinutes: 21:24\nPoints: 15 \nRebounds: 1\nAssists: 2\nSteals: 3\nBlocks: 1\nTurnovers: 1\nField Goal: 5/8\n3-Point Field Goal: 5/7\nFree throw: 0/0',result)
 
     def test_stats_no_game(self):
-        result = commands.stats_command('2021-01-22')
+        result = commands.stats_command('20201222')
         self.assertEqual(commands.NO_GAME_MSG,result)
     
     def test_stats_future_game(self):
-        result = commands.stats_command('2050-01-22')
+        result = commands.stats_command('20500122')
         self.assertEqual(commands.DATE_IN_THE_FUTURE,result)
 
-    def test_stats_bad_format(self):
+    def test_stats_bad_format_no_date(self):
         result = commands.stats_command('[YYYY-MM-DD]')
+        self.assertEqual(commands.INVALID_DATE_MSG,result)
+
+    def test_stats_bad_format_date(self):
+        result = commands.stats_command('2021-01-03')
         self.assertEqual(commands.INVALID_DATE_MSG,result)
     
     def test_stats_no_date(self):
