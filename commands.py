@@ -50,8 +50,8 @@ def season_command():
                 visitor_team = d['visitor_team']['full_name']
                 home_team_score = d['home_team_score']
                 visitor_team_score = d['visitor_team_score']
-                line = f'{date} | {visitor_team}: {visitor_team_score} - {home_team}: {home_team_score}-> /stats_{transformed_date}'
-                result.append((id,line))
+                line = f'{date}\t{visitor_team}: {visitor_team_score} - {home_team}: {home_team_score}-> /stats_{transformed_date}'
+                result.append((transformed_date,line))
         result.sort(key=takeFirst)
         command_result = ''
         for res in result:
