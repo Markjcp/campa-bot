@@ -33,8 +33,8 @@ def season_command():
         headers= headers_for_all_req,
         params={
             'team_ids[]':ids.team_id, 
-            'page[]':ids.page,
-            'per_page[]':ids.per_page, 
+            'page':ids.page,
+            'per_page':ids.per_page, 
             'seasons[]':ids.default_season})
     json_response = json.loads(response.text)
     data = json_response['data']
