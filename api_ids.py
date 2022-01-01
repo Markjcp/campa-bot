@@ -1,6 +1,6 @@
 team_id = '8'
 player_id = '3547304'
 date_prefix = 'T00:00:00.000Z'
-default_season = '2020'
+default_season = '2021'
 page = '0'
 per_page = '82'
