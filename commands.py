@@ -16,7 +16,7 @@ INVALID_DATE_MSG= 'Oh, I am expecting the date in YYYYMMDD format. You dropped t
 DATE_IN_THE_FUTURE='That date is in the future man. Facu is the wizard but I am not.'
 NO_DATE="You didn't give me a date to find. I am expecting it in YYYYMMDD format. Write the command and the date with a space or with underscore. For example /stats_20210103"
 
-headers_for_all_req={'x-rapidapi-key': '0fe22cb13emshb468f395b7d2b7fp13c79cjsnb5e281bc6f44', 'x-rapidapi-host': 'free-nba.p.rapidapi.com', 'useQueryString': 'true'}
+headers_for_all_req={'x-rapidapi-key': 'XXX', 'x-rapidapi-host': 'free-nba.p.rapidapi.com', 'useQueryString': 'true'}
 
 def takeFirst(elem):
     return elem[0]
